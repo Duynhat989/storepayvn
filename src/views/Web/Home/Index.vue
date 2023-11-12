@@ -70,14 +70,26 @@ onMounted(() => {
             <h2>Thông tin chuyển khoản</h2>
             <input type="file" id="imageInput" hidden accept="image/*" @change="readImage">
             <div class="mb-3 mt-3">
-                <label for="uname" class="form-label">Name:</label>
-                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+                <label for="uname" class="form-label">Người gửi:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Người gửi" name="uname" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">Người nhận:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Người nhận" name="uname" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">Số tiền:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Số tiền" name="uname" required>
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">Thời gian:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Thời gian" name="uname" required>
             </div>
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
                 <label class="form-check-label" for="myCheck">Lưu kèm hình ảnh.</label>
             </div>
-            <button type="submit" class="btn btn-primary">Xác nhận</button>
+            <button type="submit" class="btn btn-primary">Xác nhận thông tin</button>
             <div class="mb-3 mt-3">
                 <label for="uname" class="form-label">Thông tin từ ảnh:</label>
                 <div id="resultContainer">{{ resultContainer }}</div>
