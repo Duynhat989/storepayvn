@@ -1,14 +1,18 @@
 <script setup>
 import { onMounted, ref, watch } from "vue";
-
+import Loadding from '../../../components/layouts/Loadding.vue'
+const isLoadding = ref(false)
 const SITE_API = ref(import.meta.env.VITE_SITE_API)
 const resultContainer = ref()
 const setup = () => {
     document.title = "StorePay"
 };
-
+function clickInput(){
+    document.getElementById('imageInput').click()
+}
 async function readImage(event) {
     const input = event.target;
+    isLoadding.value = true
     if (input.files && input.files[0]) {
         const reader = new FileReader();
         reader.onload = async function (e) {
@@ -16,6 +20,7 @@ async function readImage(event) {
             let url = await uploadImage(imageBase64)
             let text = await redirect(url)
             resultContainer.value = text
+            isLoadding.value = false
         };
 
         var sdi = reader.readAsDataURL(input.files[0]);
@@ -60,13 +65,46 @@ onMounted(() => {
 </script>
 
 <template>
-    <input type="file" id="imageInput" accept="image/*" @change="readImage">
-    <br>
-    <img id="previewImage" style="max-width: 100%; max-height: 300px; margin-top: 10px; display: none;">
-    <br>
-    <button @click="performOCR()">Perform OCR</button>
-    <br>
-    <div id="resultContainer">{{ resultContainer }}</div>
+    <div class="site" v-if="!isLoadding">
+        <div class="infoStore">
+            <h2>Thông tin chuyển khoản</h2>
+            <input type="file" id="imageInput" hidden accept="image/*" @change="readImage">
+            <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">Name:</label>
+                <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required>
+            </div>
+            <div class="form-check mb-3">
+                <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+                <label class="form-check-label" for="myCheck">Lưu kèm hình ảnh.</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
+            <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">Thông tin từ ảnh:</label>
+                <div id="resultContainer">{{ resultContainer }}</div>
+            </div>
+        </div>
+        <div class="dropImage">
+            <i class='bx bx-camera bx-tada' style='color:#d500e4'  @click="clickInput"></i>
+        </div>
+    </div>
+    <Loadding v-else />
 </template>
 <style scoped>
+.infoStore {
+    padding: 15px;
+    padding-top: 30px;
+    width: 400px;
+    margin: auto;
+}
+.dropImage {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 2em;
+    border-radius: 50%;
+    padding: 5px;
+}
+.dropImage span{
+    border: 1px solid gray;
+}
 </style>
