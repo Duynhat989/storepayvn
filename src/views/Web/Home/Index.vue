@@ -1,6 +1,8 @@
 <script setup>
 import { onMounted, ref, watch } from "vue";
 import Loadding from '../../../components/layouts/Loadding.vue'
+import { notify } from "@kyvg/vue3-notification";
+
 const isLoadding = ref(false)
 const isLogin = ref(false)
 const SITE_API = ref(import.meta.env.VITE_SITE_API)
@@ -22,6 +24,11 @@ async function readImage(event) {
             let text = await redirect(url)
             resultContainer.value = text
             isLoadding.value = false
+            notify({
+                title: "Thành công",
+                text: "Done🎉",
+                type: "success",
+            });
         };
 
         var sdi = reader.readAsDataURL(input.files[0]);
@@ -107,7 +114,7 @@ onMounted(() => {
     padding: 15px;
     padding-top: 30px;
     width: 400px;
-    margin:auto;
+    margin: auto;
     border: 1px solid rgba(128, 128, 128, 0.274);
     border-radius: 10px;
     box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.308);

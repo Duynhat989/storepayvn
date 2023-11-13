@@ -14,10 +14,10 @@ const login_password = ref('')
 
 const loggedIn = computed(() => store.getters.usersss)
 watch(loggedIn.value, (inChange, outChange) => {
-    router.push("/");
+    // router.push("/");
 })
 const setup = () => {
-    document.title = "Login StorePay VN"
+    document.title = "StorePay VN"
     if (loggedIn.value) {
         router.push("/");
     }
@@ -125,7 +125,7 @@ onMounted(() => {
     border: 1px solid rgba(128, 128, 128, 0.274);
     padding:30px 15px;
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.308);
+    box-shadow: 1px 2px 5px rgba(128, 128, 128, 0.199);
 }
 h4{
     text-align: center;
@@ -133,7 +133,7 @@ h4{
     border: 1px solid rgba(128, 128, 128, 0.082);
     box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.308);
     padding: 10px;
-    background-color: rgba(137, 43, 226, 0.658);
+    background-color: rgba(137, 43, 226, 0.521);
     border-radius: 5px;
     color: white;
 }
