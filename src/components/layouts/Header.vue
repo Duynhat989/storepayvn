@@ -50,7 +50,7 @@ header {
             <RouterLink to="/" class="btn head-item"><i class='bx bx-home-alt'></i></RouterLink>
           </li>
           <li class="menu-item">
-            <RouterLink to="about" class="btn head-item"><i class='bx bxs-bell-ring' ></i></RouterLink>
+            <RouterLink to="notify" class="btn head-item"><i class='bx bxs-bell-ring' ></i></RouterLink>
           </li>
           <li class="menu-item">
             <RouterLink to="store" class="btn head-item"><i class='bx bx-store' ></i></RouterLink>

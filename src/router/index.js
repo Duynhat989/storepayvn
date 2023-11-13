@@ -3,6 +3,8 @@ import NotFoundComponent from '../components/layouts/Error404.vue'
 import HomeView from '../views/Web/Home/Index.vue'
 import LoginView from '../views/Web/Auth/Index.vue'
 import StoreView from '../views/Web/Store/Index.vue'
+import Notify from '../views/Web/Notify/Index.vue'
+import Manager from '../views/Web/Manager/Index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -15,7 +17,7 @@ const router = createRouter({
     {
       path: '/notify',
       name: 'notify',
-      component: LoginView
+      component: Notify
     },
     {
       path: '/store',
@@ -25,7 +27,7 @@ const router = createRouter({
     {
       path: '/manager',
       name: 'manager',
-      component: StoreView
+      component: Manager
     },
     {
       path: '/login',

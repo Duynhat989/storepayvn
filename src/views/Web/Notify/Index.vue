@@ -3,7 +3,7 @@ import { onMounted, ref } from "vue";
 const isLogined = ref(false);
 
 const setup = () => {
-  document.title = "Trang chủ"
+  document.title = "Thông báo"
 };
 
 onMounted(() => {
@@ -12,7 +12,9 @@ onMounted(() => {
 </script>
 
 <template>
-  
+  <div class="container">
+    danh sách thông báo
+  </div>
   <!-- Footer -->
 </template>
 <style scoped>
