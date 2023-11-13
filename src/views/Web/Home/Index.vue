@@ -2,12 +2,13 @@
 import { onMounted, ref, watch } from "vue";
 import Loadding from '../../../components/layouts/Loadding.vue'
 const isLoadding = ref(false)
+const isLogin = ref(false)
 const SITE_API = ref(import.meta.env.VITE_SITE_API)
 const resultContainer = ref()
 const setup = () => {
     document.title = "StorePay"
 };
-function clickInput(){
+function clickInput() {
     document.getElementById('imageInput').click()
 }
 async function readImage(event) {
@@ -96,7 +97,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="dropImage">
-            <i class='bx bx-camera bx-tada' style='color:#d500e4'  @click="clickInput"></i>
+            <i class='bx bx-camera bx-tada' style='color:#d500e4' @click="clickInput"></i>
         </div>
     </div>
     <Loadding v-else />
@@ -106,8 +107,13 @@ onMounted(() => {
     padding: 15px;
     padding-top: 30px;
     width: 400px;
-    margin: auto;
+    margin:auto;
+    border: 1px solid rgba(128, 128, 128, 0.274);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.308);
+    margin-top: 30px;
 }
+
 .dropImage {
     position: fixed;
     bottom: 20px;
@@ -116,7 +122,8 @@ onMounted(() => {
     border-radius: 50%;
     padding: 5px;
 }
-.dropImage span{
+
+.dropImage span {
     border: 1px solid gray;
 }
 </style>
