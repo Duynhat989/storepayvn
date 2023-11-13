@@ -93,6 +93,15 @@ onMounted(() => {
                 <label for="uname" class="form-label">Thời gian:</label>
                 <input type="text" class="form-control" id="uname" placeholder="Thời gian" name="uname" required>
             </div>
+            <div class="mb-3 mt-3">
+                <label for="uname" class="form-label">Thời gian:</label>
+                <select class="form-select">
+                    <option>Cửa hàng 1</option>
+                    <option>Cửa hàng 2</option>
+                    <option>Cửa hàng 3</option>
+                    <option>Cửa hàng 4</option>
+                </select>
+            </div>
             <div class="form-check mb-3">
                 <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
                 <label class="form-check-label" for="myCheck">Lưu kèm hình ảnh.</label>
@@ -117,7 +126,7 @@ onMounted(() => {
     margin: auto;
     border: 1px solid rgba(128, 128, 128, 0.274);
     border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.308);
+    /* box-shadow: 2px 2px 2px rgba(128, 128, 128, 0.308); */
     margin-top: 30px;
 }
 

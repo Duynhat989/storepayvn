@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import NotFoundComponent from '../components/layouts/Error404.vue'
 import HomeView from '../views/Web/Home/Index.vue'
 import LoginView from '../views/Web/Auth/Index.vue'
+import StoreView from '../views/Web/Store/Index.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,6 +11,21 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/notify',
+      name: 'notify',
+      component: LoginView
+    },
+    {
+      path: '/store',
+      name: 'store',
+      component: StoreView
+    },
+    {
+      path: '/manager',
+      name: 'manager',
+      component: StoreView
     },
     {
       path: '/login',

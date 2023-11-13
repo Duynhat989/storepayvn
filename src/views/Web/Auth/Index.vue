@@ -125,7 +125,6 @@ onMounted(() => {
     border: 1px solid rgba(128, 128, 128, 0.274);
     padding:30px 15px;
     border-radius: 10px;
-    box-shadow: 1px 2px 5px rgba(128, 128, 128, 0.199);
 }
 h4{
     text-align: center;
