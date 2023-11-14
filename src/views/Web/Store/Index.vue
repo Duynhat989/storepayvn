@@ -31,12 +31,12 @@ onMounted(() => {
       </div>
       <div class="item col-6 col-md-4 col-xl-2">
         <div class="item-content">
-          Menu online
+          Cài đặt cửa hàng
         </div>
       </div>
       <div class="item col-6 col-md-4 col-xl-2">
         <div class="item-content">
-          Cài đặt cửa hàng
+          Menu online
         </div>
       </div>
       <div class="item col-6 col-md-4 col-xl-2">

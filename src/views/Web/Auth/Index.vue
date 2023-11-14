@@ -19,7 +19,7 @@ watch(loggedIn.value, (inChange, outChange) => {
 const setup = () => {
     document.title = "StorePay VN"
     if (loggedIn.value) {
-        router.push("/");
+        router.push("/home");
     }
 };
 function handleLogin() {
@@ -37,7 +37,7 @@ function handleLogin() {
                     type: "success",
                 });
                 setTimeout(() => {
-                    router.push("/");
+                    router.push("/home");
                 }, 1000)
             } else {
                 notify({
@@ -95,7 +95,12 @@ onMounted(() => {
                     <button type="button" class="btn mb-4" @click="handleLogin()">Đăng ký</button>
                 </div>
                 <!-- Submit button -->
-
+                <div class="backgroud-home mb-4">
+                    <div class="col">
+                        <!-- Simple link -->
+                        <RouterLink to="/">Về trang chủ</RouterLink>
+                    </div>
+                </div>
                 <!-- Register buttons -->
             </div>
         </div>
@@ -103,6 +108,15 @@ onMounted(() => {
     <Loadding v-else />
 </template>
 <style scoped>
+.backgroud-home{
+    text-align: center;
+}
+a{
+    text-decoration: none;
+}
+.backgroud-home a{
+    color: white;
+}
 .auth {
     padding: 15px;
     padding-top: 30px;

@@ -2,6 +2,8 @@
 header {
   padding-top: 10px;
   height: 80px;
+  position: fixed;
+  width: 100%;
 }
 
 .flex {
